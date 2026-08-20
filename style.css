@@ -1,7 +1,546 @@
+/* =========================================================
+   GENERAL
+========================================================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-  font-family: system-ui, sans-serif;
-  max-width: 40rem;
-  margin: 4rem auto;
-  padding: 0 1rem;
-  line-height: 1.6;
+    margin: 0;
+
+    background: #ffffff;
+    color: #666666;
+
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+
+    font-size: 16px;
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   LINKS
+========================================================= */
+
+a {
+    color: #1673b8;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.page {
+    max-width: 1180px;
+
+    margin: 0 auto;
+
+    padding: 55px 35px 80px 35px;
+
+    display: grid;
+
+    grid-template-columns: 275px minmax(0, 1fr);
+
+    gap: 70px;
+}
+
+
+/* =========================================================
+   LEFT SIDEBAR
+========================================================= */
+
+.sidebar {
+    align-self: start;
+}
+
+
+/* NAME */
+
+.sidebar h1 {
+    width: 215px;
+    margin: 0 auto 2px auto;
+
+    color: #1673b8;
+
+    font-size: 29px;
+    line-height: 1.2;
+
+    font-weight: 700;
+
+    text-align: center;
+}
+
+
+/* SHORT TEXT UNDER NAME */
+
+.intro-note {
+    width: 215px;
+    margin: 0 auto 22px auto;
+
+    color: #777777;
+    font-style: italic;
+    line-height: 1.45;
+    text-align: center;
+}
+
+
+/* =========================================================
+   PROFILE PHOTO
+========================================================= */
+
+.profile-photo {
+    display: block;
+
+    width: 215px;
+    height: 215px;
+
+    margin: 20px auto 25px auto;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    border-radius: 50%;
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact-links {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 8px;
+
+    margin: 12px 0 18px 0;
+
+    font-size: 17px;
+    text-align: center;
+}
+
+.contact-links span {
+    color: #aaaaaa;
+}
+
+
+/* =========================================================
+   SIDEBAR SECTIONS
+========================================================= */
+
+.sidebar hr {
+    border: 0;
+
+    border-top: 1px solid #d9d9d9;
+
+    margin: 14px 0;
+}
+
+
+.sidebar-section {
+    font-size: 14px;
+    text-align: center;
+}
+
+
+.sidebar-section p {
+    margin: 6px 0;
+}
+
+
+.sidebar-heading {
+    margin-bottom: 4px !important;
+}
+
+
+/* =========================================================
+   SIDEBAR NAVIGATION
+========================================================= */
+
+nav {
+    display: flex;
+    flex-direction: column;
+
+    gap: 3px;
+
+    margin-top: 4px;
+}
+
+
+nav a {
+    display: block;
+
+    color: #1673b8;
+
+    font-size: 15px;
+
+    padding: 1px 0;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.content {
+    min-width: 0;
+
+    padding-top: 1px;
+}
+
+
+/* =========================================================
+   BIO
+========================================================= */
+
+.bio {
+    margin-bottom: 24px;
+}
+
+
+.bio p {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+section {
+    scroll-margin-top: 30px;
+}
+
+
+.content section:not(.bio) {
+    border-top: 1px solid #dddddd;
+
+    padding-top: 17px;
+
+    margin-top: 22px;
+}
+
+
+h2 {
+    margin: 0 0 16px 0;
+
+    color: #444444;
+
+    font-size: 18px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   PAPERS
+========================================================= */
+
+.paper {
+    margin-bottom: 28px;
+}
+
+
+.paper h3 {
+    margin: 0 0 2px 0;
+
+    color: #1673b8;
+
+    font-size: 15.5px;
+
+    line-height: 1.45;
+
+    font-weight: 700;
+}
+
+
+.paper-description {
+    margin: 1px 0;
+
+    color: #707070;
+}
+
+/* =========================================================
+   ABSTRACT + DRAFT LINKS
+========================================================= */
+
+.paper-abstract {
+    margin-top: 7px;
+}
+
+
+/* ABSTRACT + DRAFT ON SAME LINE */
+
+.paper-abstract summary {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    width: fit-content;
+
+    cursor: pointer;
+    list-style: none;
+
+    color: #1673b8;
+
+    font-size: 14px;
+}
+
+
+/* Remove browser's default arrow */
+
+.paper-abstract summary::-webkit-details-marker {
+    display: none;
+}
+
+
+/* Custom arrow */
+
+.abstract-label::before {
+    content: "▸";
+
+    margin-right: 7px;
+
+    font-size: 10px;
+}
+
+
+.paper-abstract[open] .abstract-label::before {
+    content: "▾";
+}
+
+
+/* ABSTRACT LINK */
+
+.abstract-label {
+    color: #1673b8;
+    text-decoration: none;
+}
+
+
+/* DRAFT LINK */
+
+.draft-link {
+    color: #1673b8;
+
+    text-decoration: none;
+
+    font-style: normal;
+}
+
+
+/* No underline on hover */
+
+.abstract-label:hover,
+.draft-link:hover {
+    text-decoration: none;
+}
+
+
+/* EXPANDED ABSTRACT */
+
+.abstract-text {
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 10px;
+
+    color: #666666;
+
+    font-size: 14px;
+    line-height: 1.55;
+
+    text-align: justify;
+}
+/* =========================================================
+   JOB MARKET PAPER LABEL
+========================================================= */
+
+.jmp {
+    display: inline-block;
+
+    margin-left: 6px;
+
+    padding: 2px 8px;
+
+    border-radius: 5px;
+
+    background: #fff0f0;
+
+    color: #e34b4b;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    vertical-align: middle;
+}
+
+
+/* =========================================================
+   ABSTRACT
+========================================================= */
+
+details {
+    margin-top: 2px;
+}
+
+
+summary {
+    cursor: pointer;
+
+    color: #777777;
+
+    font-size: 14px;
+
+    list-style: none;
+}
+
+
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+
+.abstract {
+    margin: 8px 0 0 17px;
+
+    color: #666666;
+
+    font-size: 14px;
+
+    line-height: 1.55;
+    text-align: justify;
+}
+
+/* =========================================================
+   TEACHING
+========================================================= */
+
+.teaching-group {
+    margin-bottom: 28px;
+}
+
+
+.teaching-group h3 {
+    margin: 0 0 12px 0;
+
+    color: #444444;
+
+    font-size: 16px;
+    font-weight: 700;
+}
+
+
+.teaching-item {
+    margin-bottom: 13px;
+}
+
+
+.teaching-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+
+    gap: 25px;
+}
+
+
+.course-title {
+    color: #444444;
+
+    font-size: 15px;
+    font-weight: 600;
+}
+
+
+.teaching-year {
+    color: #666666;
+
+    font-size: 14px;
+
+    white-space: nowrap;
+}
+
+
+.teaching-note {
+    margin: 1px 0 0 0;
+
+    color: #777777;
+
+    font-size: 14px;
+    line-height: 1.45;
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .page {
+        display: block;
+
+        padding: 30px 24px 60px 24px;
+    }
+
+
+    .sidebar {
+        max-width: 400px;
+
+        margin-bottom: 45px;
+    }
+
+
+    .profile-photo {
+        width: 190px;
+        height: 190px;
+
+        margin-left: 0;
+    }
+
+
+    .contact-links {
+        justify-content: flex-start;
+    }
+
+
+    .content {
+        padding-top: 0;
+    }
+
+    .teaching-row {
+        display: block;
+    }
+
+
+    .teaching-year {
+        display: block;
+
+        margin-top: 1px;
+    }
+
+
+    .teaching-note {
+        margin-top: 2px;
+    }
+
 }
